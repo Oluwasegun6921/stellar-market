@@ -47,7 +47,7 @@ const TARGET_TYPES = ["JOB", "USER", "MESSAGE"] as const;
 
 const createReportSchema = z.object({
   targetType: z.enum(TARGET_TYPES),
-  targetId: z.string().min(1),
+  targetId: z.string().min(1).max(255),
   reason: z.string().min(10, "Reason must be at least 10 characters").max(1000),
 });
 
